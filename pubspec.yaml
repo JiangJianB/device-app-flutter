@@ -1,0 +1,133 @@
+name: dianjian
+description: A new Flutter application.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.2.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  barcode_scan: ^1.0.0
+  flutter_plugin_qrcode: ^1.0.1
+  shared_preferences: ^0.5.1  #缓存数据
+  fluttertoast: ^3.0.3
+  date_format: ^1.0.4
+  image_picker: ^0.6.3+1
+  flutter_refresh: ^0.0.2
+  pull_to_refresh: ^1.5.7
+  flutter_screenutil: ^1.1.0
+  flutter_spinkit: "^3.0.0"
+  flutter_picker: ^1.1.0
+  dio: ^3.0.9
+  http: ^0.12.0+1
+  cookie_jar: ^1.0.1
+  html: ^0.13.3+3
+  json_annotation: ^2.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - images/bg_nfc.png
+    - images/ic_add_pic.png
+    - images/ic_app_logo.png
+    - images/ic_arrow_down.png
+    - images/ic_add.png
+    - images/ic_arrow_up.png
+    - images/ic_black_back.png
+    - images/ic_blue_right_arrow.png
+    - images/ic_config_api_url.png
+    - images/ic_config_api_url.png
+    - images/ic_danger_select.png
+    - images/ic_danger_unselect.png
+    - images/ic_default_header.png
+    - images/ic_del_pic.png
+    - images/ic_dj_cb_select.png
+    - images/ic_dj_cb_unselect.png
+    - images/ic_dj_finish.png
+    - images/ic_dj_hint.png
+    - images/ic_dj_right_arrow.png
+    - images/ic_empty_dj.png
+    - images/ic_empty_message.png
+    - images/ic_home_nfc.png
+    - images/ic_home_scan.png
+    - images/ic_home_select.png
+    - images/ic_home_unselect.png
+    - images/ic_login_logo.png
+    - images/ic_login_out.png
+    - images/ic_login_scan.png
+    - images/ic_message_select.png
+    - images/ic_message_unselect.png
+    - images/ic_mine_arrow.png
+    - images/ic_mine_record.png
+    - images/ic_mine_select.png
+    - images/ic_mine_unselect.png
+    - images/ic_modify_password.png
+    - images/ic_no_net_error.png
+    - images/ic_navigation.png
+    - images/ic_pdf.png
+    - images/ic_radio_select.png
+    - images/ic_radio_unselect.png
+    - images/ic_right_arrow_blue.png
+    - images/ic_search.png
+    - images/ic_select_tick.png
+    - images/ic_splash_logo.png
+    - images/ic_tick_select.png
+    - images/iconfont_downgrey.png
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

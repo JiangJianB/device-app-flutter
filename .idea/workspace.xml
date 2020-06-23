@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="61be3904-55cd-4537-a444-d542122cd69c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DartProblemsView" auto-scroll-to-source="true" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_5.0" />
+  <component name="FavoritesManager">
+    <favorites_list name="dianjian" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bsU78ygdI75Gj5fxB0yVIfcBRx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="D:/Projects/device-app" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.XML" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Demo\dianjian\lib\picker" />
+      <recent name="D:\Demo\dianjian\lib\home\content" />
+      <recent name="D:\Demo\dianjian\lib\utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Demo\dianjian\lib\constant" />
+      <recent name="D:\Demo\dianjian\lib\utils" />
+      <recent name="D:\Demo\dianjian\images" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="61be3904-55cd-4537-a444-d542122cd69c" name="Default Changelist" comment="" />
+      <created>1589420124244</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589420124244</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1110" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1592269475155">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1110" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592269475155" />
+    <state x="1160" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592185801374">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1160" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592185801374" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1592808473113">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592808473113" />
+    <state width="949" height="173" key="GridCell.Tab.0.bottom" timestamp="1592893819269">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="949" height="173" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592893819269" />
+    <state width="949" height="173" key="GridCell.Tab.0.center" timestamp="1592893819269">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="949" height="173" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592893819269" />
+    <state width="949" height="173" key="GridCell.Tab.0.left" timestamp="1592893819269">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="949" height="173" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592893819269" />
+    <state width="949" height="173" key="GridCell.Tab.0.right" timestamp="1592893819269">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="949" height="173" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592893819269" />
+    <state x="830" y="140" key="SettingsEditor" timestamp="1592271149057">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="830" y="140" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592271149057" />
+    <state x="360" y="120" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1592878287676">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="360" y="120" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592878287676" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1592871002306">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592871002306" />
+    <state x="1101" y="100" width="647" height="798" key="find.popup" timestamp="1592821631881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1101" y="100" width="647" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592821631881" />
+    <state x="1086" y="228" key="run.anything.popup" timestamp="1592878281765">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1086" y="228" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592878281765" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591322966151">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591322966151" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
+          <line>74</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
+          <line>88</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home/content/daily_maintain_page.dart</url>
+          <line>124</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home/content/workway_page.dart</url>
+          <line>129</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
