@@ -31,7 +31,7 @@ class _RecorddetailPageState extends State<RecorddetailPage> {
     try{
       Dio dio = Dio();
       dio.options.headers['X-Auth-Token'] = _token;
-      Response response = await dio.get("http://192.168.2.150:20001/api/user/tally-record_detail?pageNum=1&pageSize=10&jobNo=$_name");
+      Response response = await dio.get("http://192.168.2.150:20001/api/user/tally-record_detail?tallyRecordId=110786");
       Map data=response.data;
       print(data);
 

@@ -28,7 +28,6 @@ class _ModifyPageState extends State<ModifyPage> {
       Map data = response.data;
 //      data['data']=_userToken.text;
       if(data['code'] == 200) {
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => LoginPage()), (route) => route == null);
         print('数据已连接');
       } else {
         print('连接失败');
@@ -42,7 +41,6 @@ class _ModifyPageState extends State<ModifyPage> {
   @override
   void initState() {
     super.initState();
-
     _getHttp();
   }
 
@@ -52,8 +50,10 @@ class _ModifyPageState extends State<ModifyPage> {
         // ignore: missing_return
         builder: (context) {
           if (_newpwd.text  == _oddpwd.text || _newspwd.text==_newspwd.text ) {
-            return LoginPage();
-          } else if(_oddpwd.text!=_newpwd.text){
+            return AlertDialog(
+                content:Text('请联系管理员修改密码')
+            );
+          } else if(_oddpwd.text!=_newpwd.text || _oddpwd.text==null){
             return AlertDialog(
               content: Text("原始密码错误，请联系管理员"),
             );

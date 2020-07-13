@@ -5,16 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../login.dart';
 
-const double kPickerHeight = 216.0;
-const double kItemHeight = 30.0;
-const Color kBtnColor = Color(0xFF323232);//50
-const Color kTitleColor = Color(0xFF787878);//120
-const double kTextFontSize = 17.0;
-
-typedef StringClickCallback = void Function(int selectIndex,Object selectStr);
-
 
 class SpotcheckPage extends StatefulWidget {
+  final fixedAssetsNo;
+  final name;
+  final names;
+  final instructions;
+  final tallyType;
+  SpotcheckPage({this.fixedAssetsNo,this.name,this.instructions,this.tallyType,this.names});
   @override
   _SpotcheckPageState createState() => _SpotcheckPageState();
 }
@@ -31,21 +29,51 @@ class _SpotcheckPageState extends State<SpotcheckPage> {
   String unselectedGender = "不符合";
   var _token;
   var _name;
+  var _names;
   var _text;
+
+  var name;
+
+  var jobNo;
+  var postName;
+  var postNo;
+  var tallyType;
+  String _fixedAssetsNo;
+  String names;
+  String instructions;
+
+
+  List _list=['清扫','更换','检查','其他'];
+  
   @override
   void initState() {
     super.initState();
-    _getData();
+    if(widget.fixedAssetsNo != null) {
+      setState(() {
+        _fixedAssetsNo = widget.fixedAssetsNo.toString();
+        name=widget.name.toString();
+        instructions=widget.instructions.toString();
+        tallyType=widget.tallyType.toString();
+        _names=widget.names.toString();
+        debugPrint(_names);
+      });
+      _getData(_fixedAssetsNo,tallyType);
+    }
   }
 
-  _getData() async{
+  _getData(String fixedAssetsNo,String tallyType) async{
     SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
     _token=sharedPreferences.getString('_userToken');
     _name = sharedPreferences.getString('_userName');
+    name=sharedPreferences.getString('name');
+    jobNo=sharedPreferences.getString('jobNo');
+    postName=sharedPreferences.getString('postName');
+    postNo=sharedPreferences.getString('postNo');
+
     try{
       Dio dio = Dio();
       dio.options.headers['X-Auth-Token']=_token;
-      Response response=await dio.get('http://192.168.2.150:20001/api/tally/judge-over-Time?jobNo=$_name&postNo=004&fixedAssetsNo=Y02APF219&jobWayId=4&tallyType=1');
+      Response response=await dio.get('http://192.168.2.150:20001/api/tally/judge-over-Time?jobNo=$_name&postNo=$postNo&fixedAssetsNo=$fixedAssetsNo&jobWayId=4&tallyType=$tallyType');
       Map data=response.data;
       print(data);
       print(data['data']);
@@ -111,17 +139,17 @@ class _SpotcheckPageState extends State<SpotcheckPage> {
                       Container(
 
                         child: Expanded(
-                          child: Text("蒋建斌"),
+                          child:  name == null ? SizedBox() : Text(name),
                         ),
                       ),
                       Container(
                         child: Expanded(
-                          child: Text("工号：J19120267"),
+                          child: jobNo == null ? SizedBox() :  Text("工号："+jobNo),
                         ),
                       ),
                       Container(
                         child: Expanded(
-                          child: Text("岗位：作业者"),
+                          child:  postName == null ? SizedBox() : Text("岗位："+postName),
                         ),
                       ),
                       FlatButton(
@@ -158,13 +186,15 @@ class _SpotcheckPageState extends State<SpotcheckPage> {
                 ),
               ),
 
-            SizedBox(
+            Container(
               height: MediaQuery.of(context).size.height-180,
               child: ListView.builder(
-                  itemCount:1,
+                  padding: EdgeInsets.zero,
+                  itemCount:widget.names.length,
                   itemBuilder: (BuildContext context,int index){
                     return ListTile(
                       title: Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           Container(
                             margin: EdgeInsets.all(15),
@@ -174,7 +204,7 @@ class _SpotcheckPageState extends State<SpotcheckPage> {
                               children: <Widget>[
                                 Container(
                                   height:30,
-                                  child: Text("清扫"),
+                                  child: Text(_list[widget.names[index]['category']-1]),
                                 ),
                                 Container(
                                   height: 70,
@@ -189,382 +219,25 @@ class _SpotcheckPageState extends State<SpotcheckPage> {
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Text("机器周围无灰尘"),
                                               SizedBox(height: 10,),
-                                              Text("基准：无灰尘无杂物",style: TextStyle(color: Colors.black38),)
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          child: Row(
-                                            children: <Widget>[
-                                              Text("$selectedGender"),
-                                              IconButton(
-                                                icon: Icon(Icons.arrow_forward_ios),
-                                                onPressed: (){
-                                                  showModalBottomSheet(context: context, builder: (BuildContext contest){
-                                                    return Container(
-                                                      height: height/3,
-                                                      width: width,
-                                                      child:  Column(
-                                                        children: <Widget>[
-                                                          Row(
-                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                            children: <Widget>[
-                                                              FlatButton(
-                                                                color: Colors.white,
-                                                                onPressed: () {
-                                                                  Navigator.pop(context);
-                                                                },
-                                                                child: Text("取消"),
-                                                              ),
-                                                              FlatButton(
-                                                                color: Colors.white,
-                                                                onPressed: () {
-                                                                  Navigator.pop(context);
-                                                                  setState(() {
-                                                                    selectedGender = pickerChildren[selectedValue];
-                                                                  });
-                                                                },
-                                                                child: Text("确认"),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Expanded(
-                                                            child: DefaultTextStyle(
-                                                              style: TextStyle(
-                                                                color: Colors.black,
-                                                                fontSize: 22,
-                                                              ),
-                                                              child: _buildGenderPicker(),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    );
-
-                                                  });
-                                                },
+                                              Container(
+                                                child: ListView.builder(
+                                                    shrinkWrap: true,
+                                                    physics: NeverScrollableScrollPhysics(),
+                                                    itemCount: widget.names[index]['tallyCategoryDetailDTOList'].length,
+                                                    itemBuilder: (BuildContext context,int i){
+                                                      return Text('${widget.names[index]['tallyCategoryDetailDTOList'][i]['instructions']}');
+                                                    }
+                                                ),
                                               )
                                             ],
                                           ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.only(top:15),
-                                  height: 35,
-                                  child: Text("检查"),
-                                ),
-                                Container(
-                                  height: 70,
-                                  color: Colors.white,
-                                  child: Container(
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Container(
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: <Widget>[
-                                              Text("开关按钮"),
-                                              SizedBox(height: 10,),
-                                              Text("基准：无松动",style: TextStyle(color: Colors.black38),)
-                                            ],
-                                          ),
                                         ),
-                                        Container(
-                                          child: Row(
-                                            children: <Widget>[
-                                              Text('$selectedGender'),
-                                              IconButton(
-                                                icon: Icon(Icons.arrow_forward_ios),
-                                                onPressed: (){
-                                                  showModalBottomSheet(context: context, builder: (BuildContext contest){
-                                                    return Container(
-                                                      height: height/3,
-                                                      width: width,
-                                                        child: Column(
-                                                          children: <Widget>[
-                                                            Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                              children: <Widget>[
-                                                                FlatButton(
-                                                                  color: Colors.white,
-                                                                  onPressed: () {
-                                                                    Navigator.pop(context);
-                                                                  },
-                                                                  child: Text("取消"),
-                                                                ),
-                                                                FlatButton(
-                                                                  color: Colors.white,
-                                                                  onPressed: () {
-                                                                    Navigator.pop(context);
-                                                                    setState(() {
-                                                                      selectedGender = pickerChildren[selectedValue];
-                                                                    });
-                                                                  },
-                                                                  child: Text("确认"),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Expanded(
-                                                              child: DefaultTextStyle(
-                                                                style: TextStyle(
-                                                                  color: Colors.black,
-                                                                  fontSize: 22,
-                                                                ),
-                                                                child: _buildGenderPicker(),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                    );
-                                                  });
-                                                },
-                                              )
-                                            ],
-                                          ),
-                                        )
                                       ],
                                     ),
                                   ),
                                 ),
                                 Divider(),
-                                Container(
-                                  height: 70,
-                                  color: Colors.white,
-                                  child: Container(
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Container(
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: <Widget>[
-                                              Text("操作面板"),
-                                              SizedBox(height: 10,),
-                                              Text("基准：无污渍",style: TextStyle(color: Colors.black38),)
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          child: Row(
-                                            children: <Widget>[
-                                              Text("$selectedGender"),
-                                              IconButton(
-                                                icon: Icon(Icons.arrow_forward_ios),
-                                                onPressed: (){
-                                                  showModalBottomSheet(context: context, builder: (BuildContext contest){
-                                                    return Container(
-                                                      height: height/3,
-                                                      width: width,
-                                                        child: Column(
-                                                          children: <Widget>[
-                                                            Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                              children: <Widget>[
-                                                                FlatButton(
-                                                                  color: Colors.white,
-                                                                  onPressed: () {
-                                                                    Navigator.pop(context);
-                                                                  },
-                                                                  child: Text("取消"),
-                                                                ),
-                                                                FlatButton(
-                                                                  color: Colors.white,
-                                                                  onPressed: () {
-                                                                    Navigator.pop(context);
-                                                                    setState(() {
-                                                                      selectedGender = pickerChildren[selectedValue];
-                                                                    });
-                                                                  },
-                                                                  child: Text("确认"),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Expanded(
-                                                              child: DefaultTextStyle(
-                                                                style: TextStyle(
-                                                                  color: Colors.black,
-                                                                  fontSize: 22,
-                                                                ),
-                                                                child: _buildGenderPicker(),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                    );
-                                                  });
-                                                },
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Divider(),
-                                Container(
-                                  height: 70,
-                                  color: Colors.white,
-                                  child: Container(
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Container(
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: <Widget>[
-                                              Text("各线路、螺丝"),
-                                              SizedBox(height: 10,),
-                                              Text("基准：无漏铜",style: TextStyle(color: Colors.black38),)
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          child: Row(
-                                            children: <Widget>[
-                                              Text("$selectedGender"),
-                                              IconButton(
-                                                icon: Icon(Icons.arrow_forward_ios),
-                                                onPressed: (){
-                                                  showModalBottomSheet(context: context, builder: (BuildContext contest){
-                                                    return Container(
-                                                      height: height/3,
-                                                      width: width,
-                                                        child: Column(
-                                                          children: <Widget>[
-                                                            Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                              children: <Widget>[
-                                                                FlatButton(
-                                                                  color: Colors.white,
-                                                                  onPressed: () {
-                                                                    Navigator.pop(context);
-                                                                  },
-                                                                  child: Text("取消"),
-                                                                ),
-                                                                FlatButton(
-                                                                  color: Colors.white,
-                                                                  onPressed: () {
-                                                                    Navigator.pop(context);
-                                                                    setState(() {
-                                                                      selectedGender = pickerChildren[selectedValue];
-                                                                    });
-                                                                  },
-                                                                  child: Text("确认"),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Expanded(
-                                                              child: DefaultTextStyle(
-                                                                style: TextStyle(
-                                                                  color: Colors.black,
-                                                                  fontSize: 22,
-                                                                ),
-                                                                child: _buildGenderPicker(),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                    );
-                                                  });
-                                                },
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Divider(),
-                                Container(
-                                  height: 70,
-                                  color: Colors.white,
-                                  child: Container(
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Container(
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: <Widget>[
-                                              Text("各部件、螺丝"),
-                                              SizedBox(height: 10,),
-                                              Text("基准：无松动",style: TextStyle(color: Colors.black38),)
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          child: Row(
-                                            children: <Widget>[
-                                              Text("$selectedGender"),
-                                              IconButton(
-                                                icon: Icon(Icons.arrow_forward_ios),
-                                                onPressed: (){
-                                                  showModalBottomSheet(context: context, builder: (BuildContext contest){
-                                                    return Container(
-                                                      height: height/3,
-                                                      width: width,
-                                                        child: Column(
-                                                          children: <Widget>[
-                                                            Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                              children: <Widget>[
-                                                                FlatButton(
-                                                                  color: Colors.white,
-                                                                  onPressed: () {
-                                                                    Navigator.pop(context);
-                                                                  },
-                                                                  child: Text("取消"),
-                                                                ),
-                                                                FlatButton(
-                                                                  color: Colors.white,
-                                                                  onPressed: () {
-                                                                    Navigator.pop(context);
-                                                                    setState(() {
-                                                                      selectedGender = pickerChildren[selectedValue];
-                                                                    });
-                                                                  },
-                                                                  child: Text("确认"),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Expanded(
-                                                              child: DefaultTextStyle(
-                                                                style: TextStyle(
-                                                                  color: Colors.black,
-                                                                  fontSize: 22,
-                                                                ),
-                                                                child: _buildGenderPicker(),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                    );
-                                                  });
-                                                },
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
                               ],
                             ),
                           ),

@@ -1,3 +1,5 @@
+
+
 import 'package:dianjian/utils/screen_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,15 +25,20 @@ class LoginPage extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title,}) : super(key: key);
   final String title;
 
 
+
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
+  var name;
+  var jobNo;
+  var postName;
+  var postNo;
   final _userName = TextEditingController(); //用户名
   final _userPwd = TextEditingController(); //密码
   var myController = TextEditingController(); //配置地址
@@ -52,7 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
       Map data = response.data;
 //      data['data']=_userToken.text;
       if(data['code'] == 200) {
-
         _saveLoginMsg(data['data']);
         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => App()), (route) => route == null);
         print('OJBK');
@@ -81,19 +87,25 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 
-  // 保存账号密码
+  // 保存本地账号密码
   void _saveLoginMsg( Map map) async {
     SharedPreferences preferences=await SharedPreferences.getInstance();
-    await preferences.setString("name", _userName.text);
+    await preferences.setString("jobNo", _userName.text);
     await preferences.setString("pwd", _userPwd.text);
 
     await preferences.setString("_userName", map['jobNo']);
     await preferences.setString("_userPwd", map['password']);
+    await preferences.setString('name', map['name']);
+    await preferences.setString('postName', map['post']['postName']);
     await preferences.setString("_userToken", map['token']);
+    await preferences.setString('postNo', map['postNo']);
     map['jobNo'] =_userName.text;
     map['password']=_userPwd.text;
 
     print(map['token']);
+    print(map['name']);
+    print(map['post']['postName']);
+    print(map['jobNo']);
 //    data['token'] =_userToken.toString();
 //    print(map['token']);
 
@@ -103,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // 读取账号密码，并将值直接赋给账号框和密码框
   void _getLoginMsg() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    _userName.text = preferences.get("name");
+    _userName.text = preferences.get("jobNo");
     _userPwd.text = preferences.get("pwd");
   }
 

@@ -1,7 +1,9 @@
 import 'package:dianjian/login.dart';
 import 'package:dianjian/personal/record_page.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'modify_page.dart';
 import 'package:dianjian/utils/screen_utils.dart';
 
@@ -11,6 +13,41 @@ class PersonalPage extends StatefulWidget {
 }
 
 class _PersonalPageState extends State<PersonalPage> {
+  var _token;
+  var _text;
+  var _name;
+  var name;
+  var jobNo;
+  var postName;
+  @override
+  void initState() {
+    super.initState();
+    _getData();
+  }
+
+  _getData() async{
+    SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
+    _token=sharedPreferences.getString('_userToken');
+    _name=sharedPreferences.getString("userName");
+    name=sharedPreferences.getString('name');
+    jobNo=sharedPreferences.getString('jobNo');
+    postName=sharedPreferences.getString('postName');
+    try{
+      Dio dio = Dio();
+      dio.options.headers['X-Auth-Token']=_token;
+      Response response=await dio.get('http://192.168.2.150:20001/api/tally/eqJobWayTallyCount?fixedAssetsNo=Y02APF219&jobWayId=51&postNo=004&jobNo=$_name&tips=1');
+      Map data=response.data;
+      print(data);
+      if(data['code']==200){
+        setState(() {
+          _text=data['data'];
+        });
+      }
+
+    }catch(e){
+      return print(e);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     ScreenAdaptr.init(context);
@@ -80,9 +117,9 @@ class _PersonalPageState extends State<PersonalPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           textDirection: TextDirection.ltr,
                           children: <Widget>[
-                            Text("蒋建斌",style: TextStyle(fontSize: ScreenAdaptr.setFontSize(25)),),
-                            Text("工号：19120267",style: TextStyle(fontSize: 14.0,color: Colors.black54),),
-                            Text("岗位：作业者",style: TextStyle(fontSize: 14.0,color: Colors.black54),),
+                            name == null ? SizedBox() : Text(name,style: TextStyle(fontSize: ScreenAdaptr.setFontSize(25)),),
+                            jobNo == null ? SizedBox() :Text("工号："+jobNo,style: TextStyle(fontSize: 14.0,color: Colors.black54),),
+                            postName == null ? SizedBox() :Text("岗位："+postName,style: TextStyle(fontSize: 14.0,color: Colors.black54),),
 
                           ],
                         ),

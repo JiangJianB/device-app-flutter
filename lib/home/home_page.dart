@@ -8,11 +8,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  var _barcode;
   DateTime time=DateTime.now();
 
   @override
@@ -47,9 +49,6 @@ class _HomePageState extends State<HomePage> {
                           child: InkWell(
                             onTap: (){
                               scan();
-                              Navigator.push(context, MaterialPageRoute(
-                                builder: (context)=>WorkwayPage(),
-                              ));
                             },
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -175,7 +174,16 @@ class _HomePageState extends State<HomePage> {
     try {
       // 此处为扫码结果，barcode为二维码的内容
       String barcode = await BarcodeScanner.scan();
-      print('扫码结果: '+barcode);
+      _barcode=barcode;
+      if(_barcode==barcode){
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context)=>WorkwayPage(barcode:_barcode),
+        ));
+      }else{
+        Fluttertoast.showToast(msg: '扫码失败',gravity: ToastGravity.CENTER);
+      }
+      print('扫码结果:'+barcode);
+      print(_barcode);
     } on PlatformException catch (e) {
       if (e.code == BarcodeScanner.CameraAccessDenied) {
         // 未授予APP相机权限

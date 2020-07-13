@@ -1,16 +1,20 @@
+import 'package:dianjian/Instructions/Instructions.dart';
+import 'package:dianjian/app.dart';
 import 'package:dianjian/home/content/daily_maintain_page.dart';
 import 'package:dianjian/home/content/monthly_maintain_page.dart';
 import 'package:dianjian/home/content/weekly_maintain_page.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../login.dart';
 import 'package:dianjian/utils/screen_utils.dart';
 
 class WorkwayPage extends StatefulWidget {
-  String list;
-  WorkwayPage({Key key,this.list}) : super(key: key);
+  final barcode;
+  final postNo;
+  WorkwayPage({this.barcode,this.postNo});
   @override
   _WorkwayPageState createState() => _WorkwayPageState();
 }
@@ -18,27 +22,51 @@ class WorkwayPage extends StatefulWidget {
 class _WorkwayPageState extends State<WorkwayPage> {
   var _token;
   var _text;
-  int _radioGroupA = 0;
+  var name;
+  var postName;
+  var jobNo;
+  var postNo;
+  var jobWayId;
+  int _radioGroup= 0;
+  String _fixedAssetsNo;
+  var jobwayid;
 
   @override
   void initState() {
     super.initState();
-    _getData();
+    if(widget.barcode != null) {
+      setState(() {
+        _fixedAssetsNo = widget.barcode.toString();
+        print(_fixedAssetsNo);
+      });
+      _getData(_fixedAssetsNo);
+    }
   }
 
-  _getData() async{
+  _getData(String fixedAssetsNo) async{
     SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
+    name=sharedPreferences.getString('name');
+    jobNo=sharedPreferences.getString('jobNo');
+    postName=sharedPreferences.getString('postName');
     _token=sharedPreferences.getString('_userToken');
+    postNo=sharedPreferences.getString('postNo');
+
+
     try{
       Dio dio = Dio();
       dio.options.headers['X-Auth-Token']=_token;
-      Response response=await dio.get('http://192.168.2.150:20001/api/tally/eqJobWay?fixedAssetsNo=fixedAssetsNo&postNo=004');
+      Response response=await dio.get('http://192.168.2.150:20001/api/tally/eqJobWay?fixedAssetsNo=$fixedAssetsNo&postNo=$postNo');
       Map data=response.data;
       print(data);
       if(data['code']==200){
         setState(() {
           _text=data['data'];
         });
+        jobWayId=_text['jobWayList'][{'id'} ]as int;
+        print(jobWayId);
+      }else{
+        Fluttertoast.showToast(msg: '设备已停用',gravity: ToastGravity.BOTTOM,);
+        return App();
       }
 
     }catch(e){
@@ -46,15 +74,14 @@ class _WorkwayPageState extends State<WorkwayPage> {
     }
   }
 
-
   void _handleRadioValueChanged(int value) {
     setState(() {
-      _radioGroupA = value;
+      _radioGroup = value;
     });
   }
   @override
   Widget build(BuildContext context) {
-
+    if(_text==null)return Container();
     ScreenAdaptr.init(context);
     final width= MediaQuery.of(context).size.width;
     return Scaffold(
@@ -80,17 +107,17 @@ class _WorkwayPageState extends State<WorkwayPage> {
                           Container(
 
                             child: Expanded(
-                              child: Text(''),
+                              child: name == null ? SizedBox() : Text(name),
                             ),
                           ),
                           Container(
                             child: Expanded(
-                              child: Text("工号：J19120267",),
+                              child: jobNo == null ? SizedBox() : Text("工号："+jobNo),
                             ),
                           ),
                           Container(
                             child: Expanded(
-                              child: Text("岗位：作业者"),
+                              child: postName == null ? SizedBox() : Text("岗位："+postName),
                             ),
                           ),
                           FlatButton(
@@ -131,8 +158,7 @@ class _WorkwayPageState extends State<WorkwayPage> {
                   height: MediaQuery.of(context).size.height-190,
                   child: ListView.builder(
                     itemCount: 1,
-                      itemBuilder: (
-                          BuildContext context,int index){
+                      itemBuilder: (BuildContext context,int index){
                     return ListTile(
                       title: Column(
                         children: <Widget>[
@@ -149,7 +175,7 @@ class _WorkwayPageState extends State<WorkwayPage> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Text("设备名称",style: TextStyle(color: Colors.black54),),
-                                      Text(_text["equipmentName"]),
+                                      _text['equipmentName']==null ? SizedBox() : Text(_text["equipmentName"]),
                                     ],
                                   ),
                                 ),
@@ -161,7 +187,7 @@ class _WorkwayPageState extends State<WorkwayPage> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Text("型号",style: TextStyle(color: Colors.black54),),
-                                      Text(_text['equipmentModel']),
+                                      _text['equipmentModel']==null ? SizedBox() : Text(_text['equipmentModel']),
                                     ],
                                   ),
                                 ),
@@ -173,7 +199,7 @@ class _WorkwayPageState extends State<WorkwayPage> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Text("固定资产编号",style: TextStyle(color: Colors.black54),),
-                                      Text(_text['fixedAssetsNo']),
+                                      _text['fixedAssetsNo']==null ? SizedBox() : Text(_text['fixedAssetsNo']),
                                     ],
                                   ),
                                 ),
@@ -185,7 +211,7 @@ class _WorkwayPageState extends State<WorkwayPage> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Text("机号",style: TextStyle(color: Colors.black54),),
-                                      Text(_text['equipmentNo'])
+                                      _text['equipmentNo']==null ? SizedBox() : Text(_text['equipmentNo'])
                                     ],
                                   ),
                                 ),
@@ -197,12 +223,32 @@ class _WorkwayPageState extends State<WorkwayPage> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Text("所属部门",style: TextStyle(color: Colors.black54),),
-                                      Text(_text['department'])
+                                      _text['department']==null ? SizedBox() : Text(_text['department'])
                                     ],
                                   ),
                                 ),
 
                               ],
+                            ),
+                          ),
+                          Container(
+                            height: 50,
+                            color: Colors.white,
+                            child: FlatButton(
+                              onPressed: (){
+                                Navigator.push(context, MaterialPageRoute(
+                                    builder: (context)=>InstructionsPage(barcode:_fixedAssetsNo),
+
+                                ));
+                              },
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text("说明书/保养手册",style: TextStyle(color: Colors.black54),),
+                                  Icon(Icons.arrow_forward_ios,color: Colors.black38,)
+                                ],
+                              ),
                             ),
                           ),
 
@@ -219,25 +265,25 @@ class _WorkwayPageState extends State<WorkwayPage> {
                                 Text("请选择该设备将要进行的作业方式："),
                                 RadioListTile(
                                   value: 0,
-                                  groupValue: _radioGroupA,
+                                  groupValue: _radioGroup,
                                   onChanged: _handleRadioValueChanged,
                                   title: Text('日保养',style: TextStyle(fontSize: 17),),
                                   //利用_radioGroupA值与当前控件value 进行bool判断
-                                  selected: _radioGroupA == 0,  //是否跟随主题颜色
+                                  selected: _radioGroup == 0,  //是否跟随主题颜色
                                 ),
                                 RadioListTile(
                                   value: 1,
-                                  groupValue: _radioGroupA,
+                                  groupValue: _radioGroup,
                                   onChanged: _handleRadioValueChanged,
                                   title: Text('周保养',style: TextStyle(fontSize: 17),),
-                                  selected: _radioGroupA == 1,
+                                  selected: _radioGroup == 1,
                                 ),
                                 RadioListTile(
                                   value: 2,
-                                  groupValue: _radioGroupA,
+                                  groupValue: _radioGroup,
                                   onChanged: _handleRadioValueChanged,
                                   title: Text('月保养',style: TextStyle(fontSize: 17),),
-                                  selected: _radioGroupA == 2,
+                                  selected: _radioGroup == 2,
                                 ),
                               ],
                             ),
@@ -263,11 +309,17 @@ class _WorkwayPageState extends State<WorkwayPage> {
                 color: Colors.amber,
                 child: Text("下一步"),
                 onPressed: (){
-                 if(_radioGroupA==0){
+                 if(_radioGroup==0){
                    Navigator.push(context, MaterialPageRoute(
-                     builder: (context)=>DailyMaintainPage(),
+                     builder: (context)=>DailyMaintainPage(
+                       equipmentName: _text['equipmentName'],
+                       equipmentModel: _text['equipmentModel'],
+                       fixedAssetsNo: _text['fixedAssetsNo'],
+                       equipmentNo: _text['equipmentNo'],
+                       department: _text['department'],
+                     ),
                    ));
-                 }else if(_radioGroupA==1){
+                 }else if(_radioGroup==1){
                    Navigator.push(context, MaterialPageRoute(
                      builder: (context)=>WeeklyMaintainPage(),
                    ));

@@ -1,3 +1,4 @@
+import 'package:dianjian/Instructions/instructions.dart';
 import 'package:dianjian/home/content/spot_check_page.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../login.dart';
 class DailyMaintainPage extends StatefulWidget {
+  final equipmentName;
+  final equipmentModel;
+  final fixedAssetsNo;
+  final equipmentNo;
+  final department;
+  final postNo;
+  final jobWayId;
+
+
+  DailyMaintainPage({this.equipmentName,this.equipmentModel,this.fixedAssetsNo,this.equipmentNo,this.department,this.postNo,this.jobWayId});
   @override
   _DailyMainPageState createState() => _DailyMainPageState();
 }
@@ -14,26 +25,54 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
   var _token;
   var _text;
   var _name;
-  final countnumber=5;
-  final numbering=0;
-  final numbered=0;
-  final nonumber=5;
+  var name;
+  var jobNo;
+  var postName;
+  var _fixedAssetsNo;
+  var tallyType;
+  List names=[];
+  String equipmentName;
+  String equipmentModel;
+  String  fixedAssetsNo;
+  String equipmentNo;
+  String department;
+  var postNo;
+
   @override
   void initState() {
     super.initState();
-    _getData();
+    if(widget.fixedAssetsNo != null){
+      setState(() {
+        _fixedAssetsNo=widget.fixedAssetsNo.toString();
+        equipmentName=widget.equipmentName.toString();
+        equipmentModel=widget.equipmentModel.toString();
+        fixedAssetsNo=widget.fixedAssetsNo.toString();
+        equipmentNo=widget.equipmentNo.toString();
+        department=widget.department.toString();
+        postNo=widget.postNo.toString();
+      });
+      _getData(_fixedAssetsNo);
+    }
+
   }
 
-  _getData() async{
+  _getData(String fixedAssetsNo) async{
     SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
     _token=sharedPreferences.getString('_userToken');
     _name=sharedPreferences.getString("userName");
+    name=sharedPreferences.getString('name');
+    jobNo=sharedPreferences.getString('jobNo');
+    postName=sharedPreferences.getString('postName');
+    postNo=sharedPreferences.getString('postNo');
+
     try{
       Dio dio = Dio();
       dio.options.headers['X-Auth-Token']=_token;
-      Response response=await dio.get('http://192.168.2.150:20001/api/tally/eqJobWayTallyCount?fixedAssetsNo=Y02APF219&jobWayId=51&postNo=004&jobNo=$_name&tips=1');
+      Response response=await dio.get('http://192.168.2.150:20001/api/tally/eqJobWayTallyCount?fixedAssetsNo=$fixedAssetsNo&jobWayId=51&postNo=$postNo&jobNo=$_name&tips=1');
       Map data=response.data;
       print(data);
+
+
       if(data['code']==200){
         setState(() {
           _text=data['data'];
@@ -49,6 +88,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
   @override
   Widget build(BuildContext context) {
     final width= MediaQuery.of(context).size.width;
+    if(_text==null)return Container();
     return Scaffold(
         appBar:AppBar (
           title: Text("日保养",style: TextStyle(color: Colors.black),),
@@ -71,17 +111,17 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                        Container(
 
                          child: Expanded(
-                           child: Text("蒋建斌"),
+                           child: name == null ? SizedBox() : Text(name),
                          ),
                        ),
                        Container(
                          child: Expanded(
-                           child: Text("工号：J19120267"),
+                           child: jobNo == null ? SizedBox() :  Text("工号："+jobNo),
                          ),
                        ),
                        Container(
                          child: Expanded(
-                           child: Text("岗位：作业者"),
+                           child: postName == null ? SizedBox() :  Text("岗位："+postName),
                          ),
                        ),
                        FlatButton(
@@ -141,7 +181,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: <Widget>[
                                             Text("设备名称",style: TextStyle(color: Colors.black54),),
-                                            Text("电池包")
+                                            widget.equipmentName==null ? SizedBox() : Text(widget.equipmentName)
                                           ],
                                         ),
                                       ),
@@ -152,7 +192,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: <Widget>[
                                             Text("型号",style: TextStyle(color: Colors.black54),),
-                                            Text("TD1000")
+                                            widget.equipmentModel==null ? SizedBox() : Text(widget.equipmentModel)
                                           ],
                                         ),
                                       ),
@@ -163,7 +203,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: <Widget>[
                                             Text("固定资产编号",style: TextStyle(color: Colors.black54),),
-                                            Text("T06APT0037")
+                                            widget.fixedAssetsNo==null ? SizedBox() : Text(widget.fixedAssetsNo)
                                           ],
                                         ),
                                       ),
@@ -174,7 +214,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: <Widget>[
                                             Text("机号",style: TextStyle(color: Colors.black54),),
-                                            Text("J1E000072")
+                                            widget.equipmentNo==null ? SizedBox() : Text(widget.equipmentNo)
                                           ],
                                         ),
                                       ),
@@ -185,7 +225,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: <Widget>[
                                             Text("所属部门",style: TextStyle(color: Colors.black54),),
-                                            Text("特康电子")
+                                            widget.department==null ? SizedBox() : Text(widget.department)
                                           ],
                                         ),
                                       ),
@@ -198,7 +238,9 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                   color: Colors.white,
                                   child: FlatButton(
                                     onPressed: (){
-
+                                      Navigator.push(context, MaterialPageRoute(
+                                        builder: (context)=>InstructionsPage(barcode: _fixedAssetsNo,),
+                                      ));
                                     },
                                     child: Row(
                                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -226,7 +268,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                 children: <Widget>[
                                                   Text("点检日期"),
-                                                  Text("$now"),
+                                                  Text(_text['tallyDate']),
                                                 ],
                                               ),
                                             ),
@@ -247,7 +289,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                                 crossAxisAlignment: CrossAxisAlignment.end,
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: <Widget>[
-                                                  Text("$countnumber",style: TextStyle(color: Colors.amber,fontSize: 20),),
+                                                  Text(_text['tallyAllCount'].toString(),style: TextStyle(color: Colors.amber,fontSize: 20),),
                                                   SizedBox(width:10.0),
                                                   Icon(Icons.arrow_forward_ios,color: Colors.amber,),
                                                 ],
@@ -270,7 +312,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                                 crossAxisAlignment: CrossAxisAlignment.end,
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: <Widget>[
-                                                  Text("$numbering",style: TextStyle(color: Colors.amber,fontSize: 20),),
+                                                  Text(_text['nowTallyCount'].toString(),style: TextStyle(color: Colors.amber,fontSize: 20),),
                                                   SizedBox(width:10.0),
                                                   Icon(Icons.arrow_forward_ios,color: Colors.amber,),
                                                 ],
@@ -292,7 +334,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                                 crossAxisAlignment: CrossAxisAlignment.end,
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: <Widget>[
-                                                  Text("$numbered",style: TextStyle(color: Colors.amber,fontSize: 20),),
+                                                  Text(_text['alreadyTallyCount'].toString(),style: TextStyle(color: Colors.amber,fontSize: 20),),
                                                   SizedBox(width:10.0),
                                                   Icon(Icons.arrow_forward_ios,color: Colors.amber,),
                                                 ],
@@ -314,7 +356,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                                 crossAxisAlignment: CrossAxisAlignment.end,
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: <Widget>[
-                                                  Text("$nonumber",style: TextStyle(color: Colors.amber,fontSize: 20),),
+                                                  Text(_text['needTallyCount'].toString(),style: TextStyle(color: Colors.amber,fontSize: 20),),
                                                   SizedBox(width:10.0),
                                                   Icon(Icons.arrow_forward_ios,color: Colors.amber,),
                                                 ],
@@ -336,7 +378,7 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                                                 crossAxisAlignment: CrossAxisAlignment.end,
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: <Widget>[
-                                                  Text("$numbering",style: TextStyle(color: Colors.amber,fontSize: 20),),
+                                                  Text(_text['abnormalTallyCount'].toString(),style: TextStyle(color: Colors.amber,fontSize: 20),),
                                                   SizedBox(width:10.0),
                                                   Icon(Icons.arrow_forward_ios,color: Colors.amber,),
                                                 ],
@@ -373,7 +415,13 @@ class _DailyMainPageState extends State<DailyMaintainPage> {
                 child: Text("开始点检"),
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>SpotcheckPage(),
+                    builder: (context)=>SpotcheckPage(
+
+                      fixedAssetsNo: _fixedAssetsNo,
+                      tallyType: _text['tallyType'],
+                      names: _text['allTallyDTOList']
+
+                    ),
                   ));
                 },
               ),

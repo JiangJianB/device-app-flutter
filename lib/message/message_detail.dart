@@ -4,47 +4,54 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MessagedetailPage extends StatefulWidget {
+  final id;
+  MessagedetailPage({this.id});
   @override
   _MessagedetailPageState createState() => _MessagedetailPageState();
 }
 
 class _MessagedetailPageState extends State<MessagedetailPage> {
+
   var _token;
  var _text;
+ String _id;
 
 @override
   void initState() {
     super.initState();
-    _getData();
+    if(widget.id != null) {
+      setState(() {
+        _id = widget.id.toString();
+      });
+      _getData(_id);
+    }
+
   }
 
-  _getData() async{
+  Future _getData(String id) async{
     SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
     _token=sharedPreferences.getString('_userToken');
 
     try{
       Dio dio = Dio();
       dio.options.headers['X-Auth-Token']=_token;
-      Response response=await dio.get('http://192.168.2.150:20001/api/message/detail?messageId=1');
+      Response response=await dio.get('http://192.168.2.150:20001/api/message/detail?messageId=$id');
       Map data=response.data;
-      print(data);
-      if(data['code']==200){
+
+      if(response.statusCode==200){
         setState(() {
           _text=data['data'];
         });
+        print(_text);
       }
-
     }catch(e){
       return print(e);
     }
-
-    // print(json.decode(result.data)["result"]);
-
-
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context ) {
+  if(_text==null)return Container();
     return Scaffold(
       appBar: AppBar(
         title: Text('消息详情'),
@@ -52,12 +59,13 @@ class _MessagedetailPageState extends State<MessagedetailPage> {
         backgroundColor: Colors.white,
       ),
       body: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Text(_text['messageTime']),
-            SizedBox(height:30.0),
+            SizedBox(height:20.0),
             Text(_text['messageDetailContent']),
           ],
         ),
