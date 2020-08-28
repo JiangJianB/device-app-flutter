@@ -5,17 +5,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61be3904-55cd-4537-a444-d542122cd69c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/Instructions/instructions.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/Instructions/instructionsDetail.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/modules/android.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Instructions/instructions_detail.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/SplashPage.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/home/content/tally/abnormal_tally_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/home/content/tally/all_tally_count_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/home/content/tally/already_tally_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/home/content/tally/need_tally_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/home/content/tally/now_tally_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/kotlin/com/example/flutterceshi/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Flutter/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Flutter/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_ceshi/test/widget_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Instructions/instructions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Instructions/instructions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Instructions/instructionsDetail.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/danger/danger_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/danger/danger_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/danger/upload_name.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/danger/upload_name.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/continue_spot_check_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/continue_spot_check_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home/content/daily_maintain_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/daily_maintain_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/monthly_maintain_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/monthly_maintain_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home/content/spot_check_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/spot_check_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/weekly_maintain_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/weekly_maintain_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home/content/workway_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/workway_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/home_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/login.dart" afterDir="false" />
@@ -25,6 +101,8 @@
       <change beforePath="$PROJECT_DIR$/lib/personal/modify_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/personal/modify_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/personal/personal_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/personal/personal_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/personal/record_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/personal/record_detail_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/personal/record_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/personal/record_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/screen_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/screen_utils.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +118,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="resourceFile" />
         <option value="Dart File" />
       </list>
     </option>
@@ -64,23 +143,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="D:/Demo/flutter_app5" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.XML" />
+    <property name="last_opened_file_path" value="D:/Demo/flutter01" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Demo\dianjian\lib\picker" />
+      <recent name="D:\Demo\dianjian\lib\home\content" />
+      <recent name="D:\Demo\dianjian\lib\utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Demo\dianjian\lib\constant" />
       <recent name="D:\Demo\dianjian\lib\utils" />
       <recent name="D:\Demo\dianjian\images" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Demo\dianjian\lib\picker" />
-      <recent name="D:\Demo\dianjian\lib\home\content" />
-      <recent name="D:\Demo\dianjian\lib\utils" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -97,54 +176,62 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1110" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1592957407497">
+    <state x="1110" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598493283895">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1110" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592957407497" />
+    <state x="1110" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598493283895" />
     <state x="1160" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592981263402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1160" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592981263402" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1594436237465">
+    <state x="143" y="206" key="#main.dart" timestamp="1596012158460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594436237465" />
-    <state width="1877" height="162" key="GridCell.Tab.0.bottom" timestamp="1594460380430">
+    <state x="143" y="206" key="#main.dart/0.0.1920.1040@0.0.1920.1040" timestamp="1596012158460" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1598431654263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="162" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594460380430" />
-    <state width="1877" height="162" key="GridCell.Tab.0.center" timestamp="1594460380430">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598431654263" />
+    <state width="932" height="218" key="GridCell.Tab.0.bottom" timestamp="1598499706655">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="162" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594460380430" />
-    <state width="1877" height="162" key="GridCell.Tab.0.left" timestamp="1594460380430">
+    <state width="932" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598499706655" />
+    <state width="932" height="218" key="GridCell.Tab.0.center" timestamp="1598499706654">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="162" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594460380430" />
-    <state width="1877" height="162" key="GridCell.Tab.0.right" timestamp="1594460380430">
+    <state width="932" height="218" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598499706654" />
+    <state width="932" height="218" key="GridCell.Tab.0.left" timestamp="1598499706654">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="162" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594460380430" />
-    <state x="830" y="140" key="SettingsEditor" timestamp="1592271149057">
+    <state width="932" height="218" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598499706654" />
+    <state width="932" height="218" key="GridCell.Tab.0.right" timestamp="1598499706655">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="830" y="140" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592271149057" />
-    <state x="360" y="120" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594429571378">
+    <state width="932" height="218" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598499706655" />
+    <state x="233" y="195" key="RollbackChangesDialog" timestamp="1596181575888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="360" y="120" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594429571378" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1594599481130">
+    <state x="233" y="195" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596181575888" />
+    <state x="830" y="140" key="SettingsEditor" timestamp="1598421933448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594599481130" />
-    <state x="1101" y="100" width="647" height="798" key="find.popup" timestamp="1592981597128">
+    <state x="830" y="140" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598421933448" />
+    <state x="706" y="178" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1598497324414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1101" y="100" width="647" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592981597128" />
-    <state x="1086" y="228" key="run.anything.popup" timestamp="1594179417259">
+    <state x="706" y="178" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598497324414" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1598602916896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1086" y="228" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594179417259" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598602916896" />
+    <state x="1095" y="198" width="647" height="798" key="find.popup" timestamp="1596854836252">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1095" y="198" width="647" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596854836252" />
+    <state x="1086" y="228" key="run.anything.popup" timestamp="1597452962874">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1086" y="228" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597452962874" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594167722258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -155,17 +242,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
-          <line>102</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
-          <line>116</line>
+          <line>265</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/home/content/daily_maintain_page.dart</url>
-          <line>164</line>
+          <line>200</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
@@ -175,18 +257,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/Instructions/instructions.dart</url>
-          <line>64</line>
+          <line>66</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/danger/upload_name.dart</url>
-          <line>243</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/lib/home/content/workway_page.dart</url>
+          <line>244</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/danger/upload_name.dart</url>
-          <line>136</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
+          <line>286</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home/content/daily_maintain_page.dart</url>
+          <line>225</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home/content/daily_maintain_page.dart</url>
+          <line>257</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
+          <line>107</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
+          <line>106</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/danger/danger_page.dart</url>
+          <line>74</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

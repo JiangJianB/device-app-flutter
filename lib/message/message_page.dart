@@ -1,5 +1,3 @@
-
-
 import 'dart:async';
 import 'package:dianjian/message/message_detail.dart';
 import 'package:dio/dio.dart';
@@ -12,26 +10,27 @@ class MessagePage extends StatefulWidget {
 }
 
 class _MessagePageState extends State<MessagePage> {
-
   var _token;
   var _name;
   int _pagenum = 1;
   int _pagesize = 10;
   List _list = [];
 
-  ScrollController _scrollController= new ScrollController();
+  ScrollController _scrollController = new ScrollController();
   bool isLoading = false;
 
-  @override//下拉刷新
-  Future<Null> _refresh() async{
-    _list.clear();
-    await _list;
-    return;
+  //下拉刷新
+  Future<void> _refresh() async {
+    await Future.delayed(Duration(seconds: 2),(){
+      _pagesize=10;
+      _getData();
+    });
   }
 
   @override
   void initState() {
     super.initState();
+    this._refresh();
     this._getData();
     _scrollController.addListener(() {
       if (_scrollController.position.pixels ==
@@ -41,39 +40,38 @@ class _MessagePageState extends State<MessagePage> {
     });
   }
 
-
   @override
-  void dispose(){
+  void dispose() {
     _scrollController.dispose();
     super.dispose();
   }
 
-  @override
   void _getMoreData(int pagesize) async {
-    if(!isLoading){
-      setState(() => isLoading=true);
-      await Future.delayed(Duration(seconds: _pagenum),(){
+    if (!isLoading) {
+      setState(() => isLoading = true);
+      await Future.delayed(Duration(seconds: _pagenum), () {
         setState(() {
-          _pagesize+=10;
-          isLoading=false;
+          _pagesize += 10;
+          isLoading = false;
           print(_pagesize);
         });
       });
     }
   }
+
   Widget _buildProgressIndicator() {
     return new Padding(
       padding: const EdgeInsets.all(8.0),
       child: new Center(
         child: new Opacity(
           opacity: isLoading ? 0.8 : 0.0,
-          child: new CircularProgressIndicator(),
+          child: new CircularProgressIndicator(
+            backgroundColor: Colors.pink,
+          ),
         ),
       ),
     );
   }
-
-
 
   _getData() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
@@ -105,39 +103,65 @@ class _MessagePageState extends State<MessagePage> {
         appBar: AppBar(
           title: Text(
             '消息中心',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.amber,
+          backgroundColor: Colors.pink,
         ),
-        body: GestureDetector(
-          child: RefreshIndicator(
-            onRefresh: _refresh,
-            child:ListView.builder(
-              controller: _scrollController,
-          itemCount: _list.length,
-            itemExtent: 90,
-            itemBuilder: (BuildContext context, int index) {
-              if(index==_list.length){
-                return _buildProgressIndicator();
-              }else{
-                return ListTile(
-                  contentPadding: const EdgeInsets.only(left: 20,top: 15),
-                  title: Text('${_list[index]['messageListContent']}',
-                    style: TextStyle(fontSize: 14,color: Colors.black),),
-                  subtitle: Text('${_list[index]['messageTime']}',
-                    style: TextStyle(fontSize: 12,color: Colors.black),),
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => MessagedetailPage(id: _list[index]['id'],),
-                    ));
-                  },
-                );
-              }
-            },
-          ),
-          ),
+        body: Padding(
+          padding: EdgeInsets.only(right: 15),
+          child: Container(
+            color: Colors.white,
+            child: GestureDetector(
+              child: RefreshIndicator(
+                color: Colors.pink,
+                onRefresh: _refresh,
+                child: Container(
+                  child: ListView.builder(
+                    itemCount: _list.length + 1,
+                    itemExtent: 90,
+                    itemBuilder: (BuildContext context, int index) {
+                      if(index==null){
+                        return SizedBox();
+                      } else if (index == _list.length) {
+                        _buildProgressIndicator();
+                        _getData();
+                        return Padding(
+                            padding: EdgeInsets.all(18),
+                            child: Center(
+                              child:_buildProgressIndicator()
+                            )
+                        );
+                      } else {
+                        return ListTile(
+                          contentPadding: const EdgeInsets.only(left: 20, top: 13),
+                          title: Text(
+                            '${_list[index]['messageListContent']}',
+                            style: TextStyle(fontSize: 15, color: Colors.black),
+                          ),
+                          subtitle: Text(
+                            '${_list[index]['messageTime']}',
+                            style: TextStyle(fontSize: 12, color: Colors.black),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MessagedetailPage(id: _list[index]['id'],
+                                  ),
+                                ));
+                          },
+                        );
+                      }
+                    },
+                    controller: _scrollController,
+                  ),
+                )
+              ),
+
+            ),
+          )
         )
     );
   }

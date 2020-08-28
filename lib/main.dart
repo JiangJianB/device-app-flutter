@@ -1,46 +1,23 @@
-import 'package:dianjian/home/home_page.dart';
+import 'package:dianjian/app.dart';
 import 'package:dianjian/login.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'SplashPage.dart';
 
-void main() => runApp(LoginPage());
+void main() => runApp(new MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
+class MyApp extends StatelessWidget {
 
-class _MyAppState extends State<MyApp> {
-  var _token;
-  dynamic entrance;
-
-
-  @override
-  void initState(){
-    super.initState();
-    _getData();
-    if(_token !=null){
-      entrance=HomePage();
-    }else{
-      entrance=LoginPage();
-    }
-  }
-  _getData()async{
-    SharedPreferences sharedPreferences= await SharedPreferences.getInstance();
-    _token=sharedPreferences.getString('_userToken');
-    print(_token);
-  }
+// This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      color: Colors.grey,
-      home: LoginPage(),
+      title: 'Todo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SplashScreen(), // 闪屏页
     );
   }
 }
-
-
-
-

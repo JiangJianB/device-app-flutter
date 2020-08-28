@@ -8,19 +8,26 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   var _barcode;
-  DateTime time=DateTime.now();
+  var i = 1;
+  DateTime time = DateTime.now();
+  Map<String, Text> map = {
+    '近1天': Text('近1天'),
+    '近2天': Text('近2天'),
+    '近一周': Text('近一周'),
+  };
+  String _day = '近1天';
 
   @override
   void initState() {
     super.initState();
   }
+
   @override
   void dispose() {
     super.dispose();
@@ -33,12 +40,12 @@ class _HomePageState extends State<HomePage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
-          child:Column(
+          child: Column(
             children: <Widget>[
               Container(
                 height: 115,
-                color: Colors.amber,
-                child:Column(
+                color: Colors.pink,
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -47,30 +54,46 @@ class _HomePageState extends State<HomePage> {
                       children: <Widget>[
                         Expanded(
                           child: InkWell(
-                            onTap: (){
+                            onTap: () {
                               scan();
                             },
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Image.asset("images/ic_home_scan.png",width: 30,height: 30,),
-                                SizedBox(height:8.0),
-                                Text("扫一扫",style: TextStyle(color: Colors.white),)
+                                Image.asset(
+                                  "images/ic_home_scan.png",
+                                  width: 30,
+                                  height: 30,
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  "扫一扫",
+                                  style: TextStyle(color: Colors.white),
+                                )
                               ],
                             ),
                           ),
                         ),
                         Expanded(
                           child: InkWell(
-                            onTap: (){
-                              Fluttertoast.showToast(msg: "设备不支持NFC！",gravity: ToastGravity.CENTER);
+                            onTap: () {
+                              Fluttertoast.showToast(
+                                  msg: "设备不支持NFC！",
+                                  gravity: ToastGravity.CENTER);
                             },
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Image.asset("images/ic_home_nfc.png",width: 30,height: 30,),
-                                SizedBox(height:8.0),
-                                Text("读取NFC",style: TextStyle(color: Colors.white),)
+                                Image.asset(
+                                  "images/ic_home_nfc.png",
+                                  width: 30,
+                                  height: 30,
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  "读取NFC",
+                                  style: TextStyle(color: Colors.white),
+                                )
                               ],
                             ),
                           ),
@@ -82,74 +105,24 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 15,),
               Container(
-                width: ScreenAdaptr.setWidth(400),
+                width: ScreenAdaptr.setWidth(1000),
                 height: ScreenAdaptr.setHeight(60),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Expanded(
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(5),
-                            bottomLeft: Radius.circular(5),
-                          ),
-                          side: BorderSide(
-                            color: Colors.amber,
-                            width: 1.0,
-                            style: BorderStyle.solid,
-                          ),
-                        ),
-                        color: Colors.white,
-                        child: Text("近1天",style: TextStyle(fontSize: ScreenAdaptr.setFontSize(24)),),
-                        textColor: Colors.amber,
-                        highlightColor: Colors.amber,
-                        onPressed: (){
-                          setState(() {
-                          });
-                        },
-                      ),
-                    ),
-                    Expanded(
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(
-                            color: Colors.amber,
-                            width: 1.0,
-                            style: BorderStyle.solid,
-                          ),
-                        ),
-                        child: Text("近2天",style: TextStyle(fontSize: ScreenAdaptr.setFontSize(25)),),
-                        textColor: Colors.amber,
-                        color: Colors.white,
-                        onPressed: (){
-                          setState(() {
-                          });
-                        },
-                      ),
-                    ),
-                    Expanded(
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(5),
-                            bottomRight: Radius.circular(5)
-                          ),
-                          side: BorderSide(
-                            color: Colors.amber,
-                            width: 1.0,
-                            style: BorderStyle.solid,
-                          ),
-                        ),
-                        color: Colors.white,
-                        child: Text("近1周", style: TextStyle(fontSize: ScreenAdaptr.setFontSize(25)),),
-                        textColor: Colors.amber,
-                        onPressed: (){
-                          setState(() {
-                          });
-                        },
-                      ),
+                    CupertinoSegmentedControl(
+                      children: map, // 数据
+                      groupValue: _day, // 选中的数据
+                      onValueChanged: (index) {
+                        setState(() {// 数据改变时通过setState改变选中状态
+                          _day = index;
+                        });
+                      },
+                      unselectedColor: CupertinoColors.white, // 未选中颜色
+                      selectedColor: CupertinoColors.systemPink, // 选中颜色
+                      borderColor: CupertinoColors.systemPink, // 边框颜色
+                      pressedColor: const Color(0x33007AFF), // 点击时候的颜色
                     )
                   ],
                 ),
@@ -158,9 +131,16 @@ class _HomePageState extends State<HomePage> {
               Container(
                 padding: EdgeInsets.only(left: 10),
                 height: 35,
-                color: Colors.amber,
+                color: Colors.pink,
                 alignment: Alignment.centerLeft,
-                child: Text("截止到：",semanticsLabel: formatDate(time,[yyyy,'年',mm,'月',dd,'日']).toString(),style: TextStyle(color: Colors.white,fontSize: ScreenAdaptr.setFontSize(25)),),
+                child: Text(
+                  "截止到：${formatDate(DateTime.now(), [
+                    yyyy, '-', mm, '-', dd, ' 00:00:00 , 点检任务列表如下：'
+                  ])}",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ScreenAdaptr.setFontSize(25)),
+                ),
               )
             ],
           ),
@@ -174,15 +154,16 @@ class _HomePageState extends State<HomePage> {
     try {
       // 此处为扫码结果，barcode为二维码的内容
       String barcode = await BarcodeScanner.scan();
-      _barcode=barcode;
-      if(_barcode==barcode){
-        Navigator.push(context, MaterialPageRoute(
-          builder: (context)=>WorkwayPage(barcode:_barcode),
-        ));
-      }else{
-        Fluttertoast.showToast(msg: '扫码失败',gravity: ToastGravity.CENTER);
+      _barcode = barcode;
+      if (_barcode == barcode) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WorkwayPage(barcode: _barcode),
+            ));
+      } else {
+        Fluttertoast.showToast(msg: '扫码失败', gravity: ToastGravity.CENTER);
       }
-      print('扫码结果:'+barcode);
+      print('扫码结果:' + barcode);
       print(_barcode);
     } on PlatformException catch (e) {
       if (e.code == BarcodeScanner.CameraAccessDenied) {
@@ -192,7 +173,7 @@ class _HomePageState extends State<HomePage> {
         // 扫码错误
         print('扫码错误: $e');
       }
-    } on FormatException{
+    } on FormatException {
       // 进入扫码页面后未扫码就返回
       print('进入扫码页面后未扫码就返回');
     } catch (e) {
@@ -200,5 +181,4 @@ class _HomePageState extends State<HomePage> {
       print('扫码错误: $e');
     }
   }
-
 }
