@@ -24,7 +24,6 @@ class DangerPageState extends State<DangerPage> {
     this._refresh();
     this._getData();
     super.initState();
-    _controller;
   }
   @override
   void dispose() {

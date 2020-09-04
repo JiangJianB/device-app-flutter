@@ -23,6 +23,7 @@ class _MessagePageState extends State<MessagePage> {
   Future<void> _refresh() async {
     await Future.delayed(Duration(seconds: 2),(){
       _pagesize=10;
+
       _getData();
     });
   }
@@ -65,9 +66,13 @@ class _MessagePageState extends State<MessagePage> {
       child: new Center(
         child: new Opacity(
           opacity: isLoading ? 0.8 : 0.0,
-          child: new CircularProgressIndicator(
-            backgroundColor: Colors.pink,
-          ),
+          child: Column(
+            children: <Widget>[
+               CircularProgressIndicator(
+                backgroundColor: Colors.pink,
+              ),
+            ],
+          )
         ),
       ),
     );

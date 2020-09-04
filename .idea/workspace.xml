@@ -4,8 +4,22 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61be3904-55cd-4537-a444-d542122cd69c" name="Default Changelist" comment="">
+    <list default="true" id="61be3904-55cd-4537-a444-d542122cd69c" name="Default Changelist" comment="flutter">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/danger/danger_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/danger/danger_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/danger/upload_name.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/danger/upload_name.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/spot_check_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/spot_check_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/tally/abnormal_tally_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/tally/abnormal_tally_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/tally/all_tally_count_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/tally/all_tally_count_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/tally/already_tally_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/tally/already_tally_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/tally/need_tally_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/tally/need_tally_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/content/workway_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/workway_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/message/message_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/message/message_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/personal/modify_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/personal/modify_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DartProblemsView" auto-scroll-to-source="true" />
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_5.0" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_6.0" />
   <component name="FavoritesManager">
     <favorites_list name="dianjian" />
   </component>
@@ -37,6 +51,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1bsU78ygdI75Gj5fxB0yVIfcBRx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -46,8 +61,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="D:/Demo/flutter01" />
-    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yat-qms-app" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -76,10 +91,49 @@
       <option name="presentableId" value="Default" />
       <updated>1589420124244</updated>
     </task>
+    <task id="LOCAL-00001" summary="flutter">
+      <created>1598662499204</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598662499204</updated>
+    </task>
+    <task id="LOCAL-00002" summary="flutter">
+      <created>1598662588699</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598662588699</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="flutter" />
+    <option name="LAST_COMMIT_MESSAGE" value="flutter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1110" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598493283895">
@@ -94,62 +148,78 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="143" y="206" key="#main.dart/0.0.1920.1040@0.0.1920.1040" timestamp="1596012158460" />
-    <state x="1044" y="114" key="CommitChangelistDialog2" timestamp="1598662493283">
+    <state x="1044" y="114" key="CommitChangelistDialog2" timestamp="1599188630091">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1044" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1598662493283" />
-    <state x="356" y="88" key="DiffContextDialog" timestamp="1598662287107">
+    <state x="1044" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599188630091" />
+    <state x="356" y="88" key="DiffContextDialog" timestamp="1598672353688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="356" y="88" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598662287107" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1598431654263">
+    <state x="356" y="88" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598672353688" />
+    <state x="1036" y="232" key="FileChooserDialogImpl" timestamp="1599115807847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598431654263" />
-    <state width="932" height="218" key="GridCell.Tab.0.bottom" timestamp="1598499706655">
+    <state x="1036" y="232" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599115807847" />
+    <state x="1156" y="387" key="Github.CreatePullRequestDialog" timestamp="1599188961787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="932" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598499706655" />
-    <state width="932" height="218" key="GridCell.Tab.0.center" timestamp="1598499706654">
+    <state x="1156" y="387" key="Github.CreatePullRequestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599188961787" />
+    <state x="1252" y="411" key="Github.ShareDialog" timestamp="1598665329312">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="932" height="218" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598499706654" />
-    <state width="932" height="218" key="GridCell.Tab.0.left" timestamp="1598499706654">
+    <state x="1252" y="411" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598665329312" />
+    <state width="932" height="218" key="GridCell.Tab.0.bottom" timestamp="1599188630308">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="932" height="218" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598499706654" />
-    <state width="932" height="218" key="GridCell.Tab.0.right" timestamp="1598499706655">
+    <state width="932" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599188630308" />
+    <state width="932" height="218" key="GridCell.Tab.0.center" timestamp="1599188630308">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="932" height="218" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598499706655" />
+    <state width="932" height="218" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599188630308" />
+    <state width="932" height="218" key="GridCell.Tab.0.left" timestamp="1599188630308">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="932" height="218" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599188630308" />
+    <state width="932" height="218" key="GridCell.Tab.0.right" timestamp="1599188630308">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="932" height="218" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599188630308" />
     <state x="233" y="195" key="RollbackChangesDialog" timestamp="1598662289435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="233" y="195" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598662289435" />
-    <state x="830" y="140" key="SettingsEditor" timestamp="1598662439015">
+    <state x="912" y="128" key="SettingsEditor" timestamp="1598664091375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="830" y="140" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598662439015" />
-    <state x="706" y="178" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1598497324414">
+    <state x="912" y="128" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598664091375" />
+    <state x="1192" y="425" key="SetupCloudRepositoryDialog" timestamp="1598672041229">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="706" y="178" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598497324414" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1598659999203">
+    <state x="1192" y="425" key="SetupCloudRepositoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598672041229" />
+    <state x="998" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599189190830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598659999203" />
-    <state x="1191" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598662091586">
+    <state x="998" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599189190830" />
+    <state x="706" y="178" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1599177904774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1191" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598662091586" />
+    <state x="706" y="178" width="1200" height="800" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599177904774" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1599031914438">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599031914438" />
+    <state x="1191" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599189252481">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1191" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599189252481" />
     <state x="1095" y="198" width="647" height="798" key="find.popup" timestamp="1596854836252">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1095" y="198" width="647" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596854836252" />
-    <state x="1101" y="310" key="git4idea.merge.GitPullDialog" timestamp="1598661712487">
+    <state x="1101" y="310" key="git4idea.merge.GitPullDialog" timestamp="1599189157082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1101" y="310" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598661712487" />
+    <state x="1101" y="310" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599189157082" />
     <state x="1086" y="228" key="run.anything.popup" timestamp="1597452962874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -164,7 +234,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
-          <line>265</line>
+          <line>262</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
@@ -174,7 +244,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/home/content/workway_page.dart</url>
-          <line>95</line>
+          <line>94</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
@@ -184,12 +254,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/home/content/workway_page.dart</url>
-          <line>244</line>
+          <line>243</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
-          <line>286</line>
+          <line>283</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
@@ -204,17 +274,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
-          <line>107</line>
+          <line>105</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/home/content/spot_check_page.dart</url>
-          <line>106</line>
+          <line>104</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/danger/danger_page.dart</url>
-          <line>74</line>
+          <line>73</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>

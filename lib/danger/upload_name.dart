@@ -1,16 +1,8 @@
-import 'dart:convert';
-import 'dart:io';
 
-import 'package:date_format/date_format.dart';
-import 'package:dianjian/app.dart';
-import 'package:dianjian/danger/danger_page.dart';
-import 'package:dianjian/home/home_page.dart';
-import 'package:dianjian/main.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -146,6 +138,7 @@ class _UploadPageState extends State<UploadPage> {
     );
   }
 
+  // ignore: non_constant_identifier_names, missing_return
   Widget _ImageView(imgPath) {
     if (_imageUrl == null) {
     } else {

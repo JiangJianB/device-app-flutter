@@ -1,5 +1,4 @@
 import 'package:dianjian/Instructions/Instructions.dart';
-import 'package:dianjian/app.dart';
 import 'package:dianjian/home/content/daily_maintain_page.dart';
 import 'package:dianjian/home/content/monthly_maintain_page.dart';
 import 'package:dianjian/home/content/weekly_maintain_page.dart';

@@ -1,4 +1,3 @@
-import 'package:dianjian/Instructions/instructions.dart';
 import 'package:dianjian/danger/danger_page.dart';
 import 'package:dianjian/message/message_page.dart';
 import 'package:dianjian/personal/personal_page.dart';

@@ -1,7 +1,4 @@
-import 'package:dianjian/app.dart';
-import 'package:dianjian/login.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'SplashPage.dart';
 
 void main() => runApp(new MyApp());

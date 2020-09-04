@@ -15,11 +15,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var _barcode;
   var i = 1;
-  DateTime time = DateTime.now();
+  static DateTime time = DateTime.now();
+  var one = time.add(new Duration(days: 1));
+  var two = time.add(new Duration(days: 2));
+  var serven = time.add(new Duration(days: 7));
   Map<String, Text> map = {
     '近1天': Text('近1天'),
     '近2天': Text('近2天'),
-    '近一周': Text('近一周'),
+    '近1周': Text('近1周'),
   };
   String _day = '近1天';
 
@@ -35,6 +38,23 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var year = one.year.toString();
+    var month = one.month.toString();
+    var day = one.day.toString();
+    var onedays=year+'-'+month+'-'+day;
+    var twoyear = two.year.toString();
+    var twomonth = two.month.toString();
+    var twoday = two.day.toString();
+    var twodays=twoyear+'-'+twomonth+'-'+twoday;
+    var servenyear = serven.year.toString();
+    var servenmonth = serven.month.toString();
+    var servenday = serven.day.toString();
+    var servendays=servenyear+'-'+servenmonth+'-'+servenday;
+    Map<String, Text> maps = {
+      '近1天': Text(onedays),
+      '近2天': Text(twodays),
+      '近一周': Text(servendays),
+    };
     ScreenAdaptr.init(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -117,6 +137,7 @@ class _HomePageState extends State<HomePage> {
                       onValueChanged: (index) {
                         setState(() {// 数据改变时通过setState改变选中状态
                           _day = index;
+                          print(index);
                         });
                       },
                       unselectedColor: CupertinoColors.white, // 未选中颜色
@@ -127,7 +148,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+
               SizedBox(height: 15,),
+              if(_day=='近1天')
               Container(
                 padding: EdgeInsets.only(left: 10),
                 height: 35,
@@ -135,13 +158,43 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "截止到：${formatDate(DateTime.now(), [
-                    yyyy, '-', mm, '-', dd, ' 00:00:00 , 点检任务列表如下：'
+                    '$onedays 00:00, 点检任务列表如下：'
                   ])}",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: ScreenAdaptr.setFontSize(25)),
                 ),
-              )
+              ),
+              if(_day=='近2天')
+                Container(
+                  padding: EdgeInsets.only(left: 10),
+                  height: 35,
+                  color: Colors.pink,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "截止到：${formatDate(DateTime.now(), [
+                      '$twodays 00:00, 点检任务列表如下：'
+                    ])}",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: ScreenAdaptr.setFontSize(25)),
+                  ),
+                ),
+              if(_day=='近1周')
+                Container(
+                  padding: EdgeInsets.only(left: 10),
+                  height: 35,
+                  color: Colors.pink,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "截止到：${formatDate(DateTime.now(), [
+                      '$servendays 00:00, 点检任务列表如下：'
+                    ])}",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: ScreenAdaptr.setFontSize(25)),
+                  ),
+                )
             ],
           ),
         ),
