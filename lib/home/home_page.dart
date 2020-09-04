@@ -50,11 +50,6 @@ class _HomePageState extends State<HomePage> {
     var servenmonth = serven.month.toString();
     var servenday = serven.day.toString();
     var servendays=servenyear+'-'+servenmonth+'-'+servenday;
-    Map<String, Text> maps = {
-      '近1天': Text(onedays),
-      '近2天': Text(twodays),
-      '近一周': Text(servendays),
-    };
     ScreenAdaptr.init(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,

@@ -4,22 +4,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61be3904-55cd-4537-a444-d542122cd69c" name="Default Changelist" comment="flutter">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="61be3904-55cd-4537-a444-d542122cd69c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/danger/danger_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/danger/danger_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/danger/upload_name.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/danger/upload_name.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home/content/spot_check_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/spot_check_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home/content/tally/abnormal_tally_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/tally/abnormal_tally_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home/content/tally/all_tally_count_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/tally/all_tally_count_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home/content/tally/already_tally_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/tally/already_tally_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home/content/tally/need_tally_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/tally/need_tally_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home/content/workway_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/content/workway_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/message/message_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/message/message_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/personal/modify_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/personal/modify_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598662588699</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="flutter">
+      <created>1599189275712</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599189275712</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -148,10 +142,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="143" y="206" key="#main.dart/0.0.1920.1040@0.0.1920.1040" timestamp="1596012158460" />
-    <state x="1044" y="114" key="CommitChangelistDialog2" timestamp="1599188630091">
+    <state x="1044" y="114" key="CommitChangelistDialog2" timestamp="1599189271465">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1044" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599188630091" />
+    <state x="1044" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599189271465" />
     <state x="356" y="88" key="DiffContextDialog" timestamp="1598672353688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -208,10 +202,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599031914438" />
-    <state x="1191" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599189252481">
+    <state x="1191" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599189293091">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1191" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599189252481" />
+    <state x="1191" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599189293091" />
     <state x="1095" y="198" width="647" height="798" key="find.popup" timestamp="1596854836252">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
